@@ -16,17 +16,10 @@
 
 <script type="text/javascript">
     function onBuyClicked() {
-        const SAMSUNG_PAY = 'https://spay.samsung.com/';
+        const SAMSUNG_PAY = 'https://spay.samsung.com/pay';
         var supportedInstruments = [
             {
-                supportedMethods: ['basic-card'],
-                data: {
-                    supportedNetworks: ['amex', 'discover', 'mastercard', 'visa'],
-                    supportedTypes: ['credit']
-                }
-            },
-            {
-                supportedMethods: [SAMSUNG_PAY], //'https://spay.samsung.com/pay'
+                supportedMethods: ['https://spay.samsung.com/pay'],
                 data: {
                     "version": "1",
                     "productId": "edebdb81fb9e4fddb76bf9", //Service id from partner portal
