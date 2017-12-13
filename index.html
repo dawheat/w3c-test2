@@ -16,23 +16,21 @@
 
 <script type="text/javascript">
     function onBuyClicked() {
-        const SAMSUNG_PAY = 'https://spay.samsung.com/pay';
         var supportedInstruments = [
             {
                 supportedMethods: ['https://spay.samsung.com/pay'],
                 data: {
-                    "version": "1",
-                    "productId": "edebdb81fb9e4fddb76bf9", //Service id from partner portal
-                    "allowedCardNetworks": ['mastercard', 'visa'],
-                    "orderNumber": "1233123",
-                    "merchantName": "Shop Samsung(demo)", //Merchant name in partner portal
-                    "merchantGatewayParameter": {
-                        "userId": "acct_17irF7F6yPzJ7wOR"
+                    'version': '1',
+                    'productId': 'edebdb81fb9e4fddb76bf9',
+                    'allowedCardNetworks': ['mastercard', 'visa'],
+                    'orderNumber': '1233123',
+                    'merchantName': 'Shop Samsung(demo)', //Merchant name in partner portal
+                    'merchantGatewayParameter': {
+                        "userId": 'acct_17irF7F6yPzJ7wOR'
                     }
                 },
-                "isRecurring": false,
-                "billingAddressRequired": false,
-                "paymentProtocol": "PROTOCOL_3DS"
+                'isRecurring': false,
+                'billingAddressRequired': false,
             }
         ];
 
