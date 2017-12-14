@@ -26,21 +26,11 @@
                 }
             },
             {
-                supportedMethods: [SAMSUNG_PAY], //'https://spay.samsung.com/pay'
+                supportedMethods: ['https://spay.samsung.com/pay'],
                 data: {
                     version: '1',
                     productId: 'edebdb81fb9e4fddb76bf9', //Service id from partner portal
                     allowedCardNetworks: ['mastercard', 'visa'],
-                    paymentMethodTokenizationParameters: {
-                        tokenizationType: 'GATEWAY_TOKEN',
-                        parameters: {
-                            // name of the gateway you support. Stripe is an example here. 
-                            'gateway': 'stripe',
-                            // Stripe publishable key here.
-                            'stripe:publishableKey': 'pk_test_UG28PkuHMpjkgWrZH0j2vdOH',
-                            'stripe:version': '2017-08-15'
-                        }
-                    },
                     orderNumber: '1233123',
                     merchantName: 'Shop Samsung(demo)', //Merchant name in partner portal
                     merchantGatewayParameter: {
