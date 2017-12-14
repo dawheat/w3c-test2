@@ -16,7 +16,7 @@
 
 <script type="text/javascript">
     function onBuyClicked() {
-        const SAMSUNG_PAY = 'https://spay.samsung.com';
+        const SAMSUNG_PAY = 'https://spay.samsung.com/pay';
         var supportedInstruments = [
             {
                 supportedMethods: ['basic-card'],
@@ -26,7 +26,7 @@
                 }
             },
             {
-                supportedMethods: ['https://spay.samsung.com/'],
+                supportedMethods: ['https://spay.samsung.com/pay'],
                 data: {
                     version: '1',
                     productId: 'edebdb81fb9e4fddb76bf9', //Service id from partner portal
@@ -34,7 +34,7 @@
                     orderNumber: '1233123',
                     merchantName: 'Shop Samsung(demo)', //Merchant name in partner portal
                     merchantGatewayParameter: {
-                        userId: 'acct_17irF7F6yPzJ7wOR'
+                        'userId': 'acct_17irF7F6yPzJ7wOR'
                     }
                 },
                 isRecurring: false,
