@@ -40,32 +40,18 @@
         ];
 
         var details = {
-            displayItems: [{
-                label: 'Original donation amount',
-                amount: {
-                    currency: 'USD',
-                    value: '999999.00'
-                }
-            },
-                {
-                    label: 'Friends and family discount',
-                    amount: {
-                        currency: 'USD',
-                        value: '-10.00'
-                    }
-                }
-            ],
+            displayItems: 
             total: {
-                label: 'Total due',
+                label: 'Total',
                 amount: {
                     currency: 'USD',
-                    value: '999999.00'
+                    value: '0.00'
                 }
             }
         };
 
         var options = {
-            requestShipping: true,
+            requestShipping: false
             requestPayerEmail: true,
             requestPayerPhone: true,
             requestPayerName: true
