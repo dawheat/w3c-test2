@@ -44,7 +44,7 @@
                 label: 'Total',
                 amount: {
                     currency: 'USD',
-                    value: '0.00'
+                    value: '0.01'
                 }
             }
         };
@@ -77,13 +77,13 @@
                         shippingOption.id = 'us';
                         shippingOption.label = 'Standard shipping in US';
                         shippingOption.amount.value = '0.00';
-                        details.total.amount.value = '999999.00';
+                        details.total.amount.value = '0.01';
                     
                     } else if (addr.country === 'JP') {
                         shippingOption.id = 'jp';
                         shippingOption.label = 'International shipping';
-                        shippingOption.amount.value = '10.00';
-                        details.total.amount.value = '999999.00';
+                        shippingOption.amount.value = '00.00';
+                        details.total.amount.value = '00.01';
                     
                     } else {
                         // Empty array indicates rejection of the address
