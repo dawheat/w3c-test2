@@ -30,11 +30,11 @@
 		"version":'1',
 		'productId': 'd811c5394c144081a05f4a',	
 		'allowedCardNetworks': ['mastercard', 'visa'],		
-		'orderNumber': "1233123",		
+		'orderNumber': "123312332",		
 		'merchantName': 'David Lim',  
 	},
                 isRecurring: false,
-                billingAddressRequired: false,
+                billingAddressRequired: true,
                 paymentProtocol: "PROTOCOL_3DS"
             }
         ];
@@ -44,7 +44,7 @@
                 label: 'Total',
                 amount: {
                     currency: 'USD',
-                    value: '0.01'
+                    value: '1.00'
                 }
             }
         };
@@ -77,13 +77,13 @@
                         shippingOption.id = 'us';
                         shippingOption.label = 'Standard shipping in US';
                         shippingOption.amount.value = '0.00';
-                        details.total.amount.value = '0.01';
+                        details.total.amount.value = '1.00';
                     
                     } else if (addr.country === 'JP') {
                         shippingOption.id = 'jp';
                         shippingOption.label = 'International shipping';
                         shippingOption.amount.value = '00.00';
-                        details.total.amount.value = '00.01';
+                        details.total.amount.value = '1.00';
                     
                     } else {
                         // Empty array indicates rejection of the address
