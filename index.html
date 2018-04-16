@@ -83,13 +83,13 @@
                         shippingOption.id = 'us';
                         shippingOption.label = 'Standard shipping in US';
                         shippingOption.amount.value = '0.00';
-                        details.total.amount.value = '0.00';
+                        details.total.amount.value = '1.00';
                     
                     } else if (addr.country === 'JP') {
                         shippingOption.id = 'jp';
                         shippingOption.label = 'International shipping';
                         shippingOption.amount.value = '0.00';
-                        details.total.amount.value = '0.00';
+                        details.total.amount.value = '1.00';
                     
                     } else {
                         // Empty array indicates rejection of the address
