@@ -59,9 +59,9 @@
         };
         var options = {
             requestShipping: false,
-            requestPayerEmail: true,
-            requestPayerPhone: true,
-            requestPayerName: true
+            requestPayerEmail: false,
+            requestPayerPhone: false,
+            requestPayerName: false
         };
         // Initialization
         var request = new PaymentRequest(supportedInstruments, details, options);
