@@ -16,8 +16,6 @@
 
 <script type="text/javascript">
 	
-	const SAMSUNG_PAY = 'https://spay.samsung.com';
-	
     function onBuyClicked() {
         var supportedInstruments = [
         
@@ -31,7 +29,7 @@
             var methodData = [
        
                 {
-                    supportedMethods: [SAMSUNG_PAY],
+                    supportedMethods: ['https://spay.samsung.com'],
                     data: {
                         'version': '1', // always 1 until further notice
                         'productId': serviceId, // Service ID from partner portal
