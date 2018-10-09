@@ -16,22 +16,35 @@
 
 <script type="text/javascript">
     function onBuyClicked() {
-        
-            {
-                supportedMethods: ['https://spay.samsung.com'],
-                data: {			
-		"version":'1',
-		'productId': "d811c5394c144081a05f4a",	
-		'allowedCardNetworks': ['mastercard', 'visa'],	
-'merchantGatewayParameter': {"userId": "acct_ 17irF7F6yPzJ7wOR"},	
-		'orderNumber': "1233123",
-                "isRecurring": "false",
-                "billingAddressRequired": "true",
-                "paymentProtocol": "PROTOCOL_3DS",
-		'merchantName': 'David Lim 2',  
-	},
+const SAMSUNG_PAY = 'https://spay.samsung.com';
+
+            if (window.PaymentRequest) {
+                alert('SamsungPay available')
             }
-        ];
+
+            // Use Payment Request API
+            var parnterId = 'ACCT_1DFMR2LGVW0K41TL'; 
+            var serviceId = '04c022cbfb714b22a43fd8'; 
+            var merchantName = 'SPay TEST Merch'; //must be identical with merchant name from portal, event name?
+
+            var orderId = '111';//$('#order-id').val();
+            var amount = '2.00';//$('#total').val();
+
+            var supportedInstruments = [
+       
+                {
+                    supportedMethods: [SAMSUNG_PAY],
+                    data: {
+                        'version': '1', // always 1 until further notice
+                        'productId': serviceId, // Service ID from partner portal
+                        'merchantGatewayParameter': { 'userId': parnterId },
+                        'allowedCardNetworks': ['mastercard', 'visa'],
+                        'merchantName': merchantName,
+                        'orderNumber': orderId
+                    }
+                }
+            ];
+
         var details = {
             displayItems: [{
                 label: 'Lyft Pre-authorization',
@@ -40,7 +53,7 @@
                     value: '0.00'
                 }
             }
-            ,
+            ],
             total: {
                 label: 'Lyft Pre-authorization',
                 amount: {
@@ -154,4 +167,4 @@
 </script>
 </body>
 </html>
-4:25pm
+4:30pm
