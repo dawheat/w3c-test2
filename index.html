@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -15,25 +15,23 @@
 
 
 <script type="text/javascript">
-	
     function onBuyClicked() {
         var supportedInstruments = [
-
-            var methodData = [
-       
-                {
-                    supportedMethods: ['https://spay.samsung.com'],
-                    data: {
-                        'version': '1', // always 1 until further notice
-                        'productId': 04c022cbfb714b22a43fd8, // Service ID from partner portal
-                        'merchantGatewayParameter': { 'userId': ACCT_1DFMR2LGVW0K41TL},
-                        'allowedCardNetworks': ['mastercard', 'visa'],
-                        'merchantName': SPay TEST Merch,
-                        'orderNumber': 234234
-                    }
-                }
-            ];
-
+        
+            {
+                supportedMethods: ['https://spay.samsung.com'],
+                data: {			
+		"version":'1',
+		'productId': "d811c5394c144081a05f4a",	
+		'allowedCardNetworks': ['mastercard', 'visa'],	
+'merchantGatewayParameter': {"userId": "acct_ 17irF7F6yPzJ7wOR"},	
+		'orderNumber': "1233123",
+                "isRecurring": "false",
+                "billingAddressRequired": "true",
+                "paymentProtocol": "PROTOCOL_3DS",
+		'merchantName': 'David Lim 2',  
+	},
+            }
         ];
         var details = {
             displayItems: [{
@@ -157,3 +155,4 @@
 </script>
 </body>
 </html>
+© 2018 GitHub, Inc.
