@@ -18,13 +18,6 @@
 	
     function onBuyClicked() {
         var supportedInstruments = [
-        
-            var parnterId = 'ACCT_1DFMR2LGVW0K41TL'; 
-            var serviceId = '04c022cbfb714b22a43fd8'; 
-            var merchantName = 'SPay TEST Merch'; //must be identical with merchant name from portal, event name?
-
-            var orderId = '111';//$('#order-id').val();
-            var amount = '2.00';//$('#total').val();
 
             var methodData = [
        
@@ -32,11 +25,11 @@
                     supportedMethods: ['https://spay.samsung.com'],
                     data: {
                         'version': '1', // always 1 until further notice
-                        'productId': serviceId, // Service ID from partner portal
-                        'merchantGatewayParameter': { 'userId': parnterId },
+                        'productId': 04c022cbfb714b22a43fd8, // Service ID from partner portal
+                        'merchantGatewayParameter': { 'userId': ACCT_1DFMR2LGVW0K41TL},
                         'allowedCardNetworks': ['mastercard', 'visa'],
-                        'merchantName': merchantName,
-                        'orderNumber': orderId
+                        'merchantName': SPay TEST Merch,
+                        'orderNumber': 234234
                     }
                 }
             ];
