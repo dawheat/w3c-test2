@@ -135,6 +135,8 @@
                 requestPayerPhone: true,
                 requestPayerName: true
             };
+            
+                    document.querySelector('#start').addEventListener('click', onBuyClicked);
 try
 {
             var request = new PaymentRequest(supportedInstruments, details, options);
@@ -189,9 +191,9 @@ try
             //    console.error('Uh oh, something bad happened: ' + err.message);
             //});
         }
-        document.querySelector('#start').addEventListener('click', onBuyClicked);
+
     </script>
 
 </body>
 </html>
-780
+790
