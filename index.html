@@ -61,57 +61,28 @@
                 requestPayerName: true
             };
         // Initialization
-
+try
+{
             var request = new PaymentRequest(supportedInstruments, details, options);
 
             // Show UI then continue with user payment info
             request.show().then(paymentResponse => {
-                
-return fetch('/pay', {
-                method: 'POST',
-                credentials: 'include',
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-                ,
-                body: JSON.stringify(result.toJSON())
-            }).then(res => {
-                // Only if successful
-                if (res.status === 200) {
-                    return res.json();
-                } else {
-                    throw 'Failure';
-                }
-            }).then(response => {
-            // You should have received a JSON object
-                if (response.success == true) {
-                    return result.complete('success')
-                        ;
-                } else {
-                    return result.complete('fail')
-                        ;
-                }
-            }).then(() => {
-                console.log('Thank you!', result.shippingAddress.toJSON(), result.methodName, result.details.toJSON());
-            }).catch(() => {
-                return result.complete('fail');
+
+                var paymentData = {
+                    // payment method string, e.g. “amex”
+                    method: paymentResponse.methodName,
+                    // payment details contains payment information
+                    details: paymentResponse.details
+                };
+
+                // send to server
+
             });
-        })
-        .catch(function (err) {
-            console.error('Uh oh, something bad happened: ' + err.message);
-        });
-    }
-        if (!window.PaymentRequest) {
-            // PaymentRequest API is not available - forwarding to legacy form based experience.
-            location.href = '/checkout';
-        }
-        
-        
-        document.querySelector('#start').addEventListener('click', onBuyClicked);
+}
 
         
 </script>
 </body>
 </html>
 
-653
+656
