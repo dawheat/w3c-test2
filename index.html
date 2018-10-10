@@ -61,7 +61,7 @@
                 requestPayerName: true
             };
         // Initialization
-{
+try
             var request = new PaymentRequest(supportedInstruments, details, options);
 
             // Show UI then continue with user payment info
@@ -76,7 +76,7 @@
 
                 // send to server
 
-            });
+            };
       
         
         document.querySelector('#start').addEventListener('click', onBuyClicked);
@@ -84,4 +84,4 @@
 </body>
 </html>
 
-559
+600
