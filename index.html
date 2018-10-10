@@ -91,7 +91,7 @@
         }
         
         function onBuyClicked() {
-            if (!window.PaymentRequest) {
+            if (window.PaymentRequest) {
                 alert('Mobile not available')
             }
 
@@ -200,4 +200,4 @@ document.querySelector('#start').addEventListener('click', onBuyClicked);
 
 </body>
 </html>
-1001
+1002
