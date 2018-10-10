@@ -61,30 +61,25 @@
                 requestPayerName: true
             };
         // Initialization
-try
-{
+
             var request = new PaymentRequest(supportedInstruments, details, options);
 
             // Show UI then continue with user payment info
             request.show().then(paymentResponse => {
 
-                var paymentData = {
-                    // payment method string, e.g. “amex”
-                    method: paymentResponse.methodName,
-                    // payment details contains payment information
-                    details: paymentResponse.details
-                };
-
-                // send to server
-
-            });
-}catch(e){ alert(e.message) }
-
-        }
-            
-            
+            return fetch('/pay', {
+                method: 'POST',
+                credentials: 'include',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+                ,
+                body: JSON.stringify(result.toJSON())
+            })
+        
+                  
 </script>
 </body>
 </html>
 
-700
+706
