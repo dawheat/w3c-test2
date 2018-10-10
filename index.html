@@ -28,7 +28,7 @@ function onBuyClicked() {
             var merchantName = 'Tapin2'; //must be identical with merchant name from portal, event name?
 
             var orderId = '111';//$('#order-id').val();
-            var amount = '2.00';//$('#total').val();
+            var orderAmount = '2.00';//$('#total').val();
 
             var supportedInstruments = [
                 {
@@ -48,7 +48,7 @@ function onBuyClicked() {
                 label: 'Lyft Pre-authorization',
                 amount: {
                     currency: 'USD',
-                    value: 'amount'
+                    value: 'orderAmount'
                 }
             }
             ],
@@ -56,7 +56,7 @@ function onBuyClicked() {
                 label: 'Lyft Pre-authorization',
                 amount: {
                     currency: 'USD',
-                    value: 'amount'
+                    value: 'orderAmount'
                 }
             }
         };
