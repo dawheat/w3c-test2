@@ -1,6 +1,3 @@
-
-
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -24,7 +21,7 @@
 
 
 <h2>Test</h2>
-<button onclick="onBuyClicked();" >SAMSUNG PAY</button>
+<button id="start" >SAMSUNG PAY</button>
 <div id="enc-data" style="border: 1px dotted blue; min-height: 100px;"></div>
 <div id="enc-data-ksn" style="border: 1px dotted red; margin-top: 50px; min-height: 100px;"></div>
 <div id="enc-data-track1" style="border: 1px dotted yellow; margin-top: 50px; min-height: 100px;"></div>
@@ -91,10 +88,8 @@
         }
         
         function onBuyClicked() {
-            const SAMSUNG_PAY = 'https://spay.samsung.com';
-
-            if (window.PaymentRequest) {
-                alert('SamsungPay available')
+            if (!window.PaymentRequest) {
+                alert('Mobile not available')
             }
 
             // Use Payment Request API
@@ -106,16 +101,22 @@
             var amount = '2.00';//$('#total').val();
 
             var supportedInstruments = [
+                // {
+                //     supportedMethods: ['basic-card'],
+                //     data: {
+                //         supportedNetworks: ['amex', 'discover', 'mastercard', 'visa'],
+                //         supportedTypes: ['credit']
+                //     }
+                // }
                 {
-                    supportedMethods: [SAMSUNG_PAY],
+                    supportedMethods: ['https://spay.samsung.com'],
                     data: {
                         'version': '1', // always 1 until further notice
                         'productId': serviceId, // Service ID from partner portal
                         'merchantGatewayParameter': { 'userId': parnterId },
                         'allowedCardNetworks': ['mastercard', 'visa'],
                         'merchantName': merchantName,
-                        'orderNumber': orderId,
-                        'billingAddressRequired': true
+                        'orderNumber': orderId
                     }
                 }
             ];
@@ -132,14 +133,11 @@
             };
             var options = {
                 requestShipping: false,
-                requestPayerEmail: false,
-                requestPayerPhone: false,
-                requestPayerName: false
+                requestPayerEmail: true,
+                requestPayerPhone: true,
+                requestPayerName: true
             };
-            
-                  
-try
-{
+
             var request = new PaymentRequest(supportedInstruments, details, options);
 
             // Show UI then continue with user payment info
@@ -154,8 +152,10 @@ try
 
                 // send to server
 
+            }).catch(function (err) {
+                alert(err.message);
             });
-}catch(e){ alert(e.message) }
+
             // Show UI then continue with user payment info
             //request.show().then(result => {
             //    // POST the result to the server
@@ -192,9 +192,10 @@ try
             //    console.error('Uh oh, something bad happened: ' + err.message);
             //});
         }
-  document.querySelector('#start').addEventListener('click', onBuyClicked);
+document.querySelector('#start').addEventListener('click', onBuyClicked);
     </script>
 
 </body>
 </html>
-801
+
+347
