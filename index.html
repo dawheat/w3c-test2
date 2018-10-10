@@ -74,7 +74,7 @@
                     'Content-Type': 'application/json'
                 }
                 ,
-                body: JSON.stringify(result.toJSON())
+                body: JSON.stringify(paymentResponse.toJSON())
             }).then(res => {
                 // Only if successful
                 if (res.status === 200) {
@@ -107,4 +107,4 @@
 </body>
 </html>
 
-715
+716
