@@ -61,9 +61,27 @@
                 requestPayerName: true
             };
         // Initialization
-        var request = new PaymentRequest(supportedInstruments, details, options);
-        // Show UI then continue with user payment info
-        request.show().then(result => {
+ 
+            try
+{
+            var request = new PaymentRequest(supportedInstruments, details, options);
+
+            // Show UI then continue with user payment info
+            request.show().then(paymentResponse => {
+
+                var paymentData = {
+                    // payment method string, e.g. “amex”
+                    method: paymentResponse.methodName,
+                    // payment details contains payment information
+                    details: paymentResponse.details
+                };
+
+                // send to server
+
+            });
+}
+            
+            
         // POST the result to the server
             return fetch('/pay', {
                 method: 'POST',
@@ -110,4 +128,4 @@
 </body>
 </html>
 
-615
+623
