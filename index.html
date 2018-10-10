@@ -101,13 +101,11 @@
             console.error('Uh oh, something bad happened: ' + err.message);
         });
     }
-        if (!window.PaymentRequest) {
-            // PaymentRequest API is not available - forwarding to legacy form based experience.
-            location.href = '/checkout';
-        }
-                  
+    
+           document.querySelector('#start').addEventListener('click', onBuyClicked);
+    
 </script>
 </body>
 </html>
 
-717
+718
