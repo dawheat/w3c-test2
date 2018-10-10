@@ -61,11 +61,12 @@
                 requestPayerName: true
             };
         // Initialization
-
+try
+{
             var request = new PaymentRequest(supportedInstruments, details, options);
 
             // Show UI then continue with user payment info
-            request.show().then(paymentResponse => {
+            request.show().then(result => {
 
                 var paymentData = {
                     // payment method string, e.g. “amex”
@@ -77,7 +78,7 @@
                 // send to server
 
             });
-
+}
             
             
         // POST the result to the server
@@ -126,4 +127,4 @@
 </body>
 </html>
 
-625
+626
