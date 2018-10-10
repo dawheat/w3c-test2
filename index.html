@@ -1,6 +1,3 @@
-
-
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -24,7 +21,7 @@
 
 
 <h2>Test</h2>
-<button id="onBuyClicked();" >SAMSUNG PAY</button>
+<button id="start" >SAMSUNG PAY</button>
 <div id="enc-data" style="border: 1px dotted blue; min-height: 100px;"></div>
 <div id="enc-data-ksn" style="border: 1px dotted red; margin-top: 50px; min-height: 100px;"></div>
 <div id="enc-data-track1" style="border: 1px dotted yellow; margin-top: 50px; min-height: 100px;"></div>
@@ -91,7 +88,7 @@
         }
         
         function onBuyClicked() {
-            if (window.PaymentRequest) {
+            if (!window.PaymentRequest) {
                 alert('Mobile not available')
             }
 
@@ -200,4 +197,4 @@ document.querySelector('#start').addEventListener('click', onBuyClicked);
 
 </body>
 </html>
-1002
+100
