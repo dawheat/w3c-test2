@@ -62,10 +62,10 @@
             };
         // Initialization
 
-            var request = new PaymentRequest(supportedInstruments, details, options);
-
-            // Show UI then continue with user payment info
-            request.show().then(paymentResponse => {
+ var request = new PaymentRequest(supportedInstruments, details, options);
+        // Show UI then continue with user payment info
+        request.show().then(result => {
+        // POST the result to the server
 
             return fetch('/pay', {
                 method: 'POST',
@@ -74,7 +74,7 @@
                     'Content-Type': 'application/json'
                 }
                 ,
-                body: JSON.stringify(paymentResponse.toJSON())
+                body: JSON.stringify(result.toJSON())
             }).then(res => {
                 // Only if successful
                 if (res.status === 200) {
@@ -101,10 +101,13 @@
             console.error('Uh oh, something bad happened: ' + err.message);
         });
     }
-
+        if (!window.PaymentRequest) {
+            // PaymentRequest API is not available - forwarding to legacy form based experience.
+            location.href = '/checkout';
+        }
                   
 </script>
 </body>
 </html>
 
-716
+717
