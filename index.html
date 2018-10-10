@@ -114,7 +114,8 @@
                         'merchantGatewayParameter': { 'userId': parnterId },
                         'allowedCardNetworks': ['mastercard', 'visa'],
                         'merchantName': merchantName,
-                        'orderNumber': orderId
+                        'orderNumber': orderId,
+                        'billingAddressRequired': true
                     }
                 }
             ];
@@ -131,9 +132,9 @@
             };
             var options = {
                 requestShipping: false,
-                requestPayerEmail: true,
-                requestPayerPhone: true,
-                requestPayerName: true
+                requestPayerEmail: false,
+                requestPayerPhone: false,
+                requestPayerName: false
             };
             
                   
@@ -196,4 +197,4 @@ try
 
 </body>
 </html>
-800
+801
