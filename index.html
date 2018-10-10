@@ -61,9 +61,8 @@
                 requestPayerName: true
             };
         // Initialization
-try {
-  var request = new PaymentRequest(supportedInstruments, details, options);
 
+  var request = new PaymentRequest(supportedInstruments, details, options);
         request.show().then(result => {
         // POST the result to the server
             return fetch('/pay', {
@@ -112,4 +111,4 @@ try {
 </body>
 </html>
 
-638
+641
